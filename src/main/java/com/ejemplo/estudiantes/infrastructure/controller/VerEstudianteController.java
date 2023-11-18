@@ -26,6 +26,7 @@ public class VerEstudianteController {
     }
     @GetMapping("{id}")
     public Estudiante obtenerEstudiante(@PathVariable("id") Long estudianteId){
+        log.info("Se imprime un estudiante");
         return verEstudianteService.obtenerEstudiante(estudianteId);
     }
 }

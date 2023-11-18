@@ -1,0 +1,15 @@
+package exceptions;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ApiErrorResponse {
+    private String mensajeError;
+}

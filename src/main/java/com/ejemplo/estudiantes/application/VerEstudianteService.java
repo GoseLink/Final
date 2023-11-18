@@ -2,6 +2,7 @@ package com.ejemplo.estudiantes.application;
 
 import com.ejemplo.estudiantes.domain.Estudiante;
 import com.ejemplo.estudiantes.infrastructure.repository.EstudianteRepository;
+import exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,6 @@ public class VerEstudianteService {
                         .edad(estudianteEntity.getEdad())
                         .nombre(estudianteEntity.getNombre())
                         .apellido(estudianteEntity.getApellido())
-                        .build()).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+                        .build()).orElseThrow(() -> new ResourceNotFoundException(String.format("Estdiante %d no encontrado", estudianteId)));
     }
 }
